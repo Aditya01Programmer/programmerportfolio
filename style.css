@@ -1,0 +1,216 @@
+body {
+background: linear-gradient( 100deg ,#D3E7EE 0%, #B9D4DB 100%
+);
+}
+.profile-container{
+        height: 400px;
+        width: 100%;
+        
+        background-color:#BDD8E9;
+        border-radius: 50px 50px;
+        display: flex;
+        flex-direction: row;
+        margin: 50px auto;
+        padding-left: 20px;
+        padding-right: 20px;
+        align-items: center;
+        
+}
+.profile {
+        height: 300px;
+        width: 300px;
+        border-radius: 50%;
+        margin-right: 5px;
+        overflow: hidden;
+        animation-name: golgolraani;
+        animation-duration: 9s;
+        animation-iteration-count: infinite;
+        animation-delay: 2s;
+        animation-direction: alternate-reverse;
+        animation-fill-mode: backwards;
+}
+.profile img {
+        height: 100%;
+        width: 100%;
+        margin-top: 0px;
+        
+}
+@keyframes golgolraani{
+        from{
+                transform: translateX(0px)  rotate3d(1,1,1,360deg)  ;
+                
+        }
+        
+        to{
+                transform: translateX(500px) rotate3d(0,1,1,180deg);
+                scale: 1;
+        }
+}
+.tech-stack {
+  padding: 50px 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  margin: 40px auto;
+}
+
+.stack-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.stack-item {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  width: 120px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.stack-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.stack-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (max-width: 768px) {
+  .profile-container {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .profile {
+    height: 200px;
+    width: 200px;
+    margin: 0 auto 20px auto;
+    animation: none; /* Optional: remove animation on mobile */
+  }
+
+  .tech-stack {
+    padding: 30px 10px;
+  }
+
+  .stack-container {
+    gap: 20px;
+  }
+
+  .stack-item {
+    width: 90px;
+    padding: 10px;
+  }
+
+  .stack-item img {
+    width: 50px;
+    height: 50px;
+  }
+}
+.stack-item {
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  width: 120px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  cursor: pointer;
+}
+
+.stack-item .skill-info {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transform: translateY(20px);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 12px;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.4s ease;
+  pointer-events: none;
+}
+
+.stack-item:hover .skill-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+.stack-item:hover {
+  transform: scale(1.05);
+}
+@media (max-width: 768px) {
+  .stack-item .skill-info {
+    opacity: 1;
+    transform: translateY(0);
+    position: static;
+    margin-top: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .stack-item:hover .skill-info {
+    /* Disable hover effect on mobile */
+    opacity: 0;
+    max-height: 0;
+    padding: 0;
+  }
+
+  .stack-item.active .skill-info {
+    opacity: 1;
+    max-height: 150px;
+    padding: 10px;
+  }
+}
+@media (min-width: 769px) {
+  .stack-item {
+    width: 180px;
+    padding: 25px;
+    font-size: 18px;
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+
+  .stack-item img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .stack-item:hover {
+    transform: scale(1.1);
+  }
+
+  .hover-info {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.95);
+    color: #111;
+    padding: 10px 14px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 10px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 5;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .stack-item:hover .hover-info {
+    opacity: 1;
+  }
+}
